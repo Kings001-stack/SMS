@@ -1,0 +1,329 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Global Styles for Red and White Theme */
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-secondary-50 to-primary-50 text-secondary-900;
+    min-height: 100vh;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-300 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+}
+
+@layer components {
+  /* Custom utilities */
+  .container-pad {
+    @apply max-w-6xl mx-auto px-4;
+  }
+  
+  /* Red Theme Button Variants */
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 shadow-red hover:shadow-red-lg transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-primary-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-100 hover:bg-secondary-200 text-secondary-700 border border-secondary-300 font-medium px-4 py-2 rounded-lg transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-secondary-200 transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-accent {
+    @apply bg-accent-600 hover:bg-accent-700 text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 shadow-red hover:shadow-red-lg transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-accent-200;
+  }
+  
+  /* Card Variants */
+  .card-primary {
+    @apply bg-white rounded-xl border border-primary-200 shadow-sm hover:shadow-red-lg transition-all duration-300 p-6;
+  }
+  
+  .card-gradient {
+    @apply bg-gradient-to-br from-white to-primary-50 rounded-xl border border-primary-200 shadow-sm hover:shadow-red-lg transition-all duration-300 p-6;
+  }
+  
+  .card-glow {
+    @apply bg-white rounded-xl border border-primary-200 shadow-glow hover:shadow-glow-lg transition-all duration-300 p-6;
+  }
+  
+  /* Input Variants */
+  .input-primary {
+    @apply w-full px-3 py-2 border border-secondary-300 rounded-lg text-secondary-900 focus:border-primary-600 focus:ring-primary-600 focus:outline-none focus:ring-2 focus:ring-opacity-50 disabled:bg-secondary-50 disabled:cursor-not-allowed transition-colors duration-200;
+  }
+  
+  .input-error {
+    @apply w-full px-3 py-2 border border-error rounded-lg text-secondary-900 focus:border-error focus:ring-error focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors duration-200;
+  }
+  
+  /* Badge Variants */
+  .badge-primary {
+    @apply px-2.5 py-1 bg-primary-100 text-primary-700 border border-primary-200 font-medium rounded-full text-sm inline-flex items-center;
+  }
+  
+  .badge-secondary {
+    @apply px-2.5 py-1 bg-secondary-100 text-secondary-700 border border-secondary-200 font-medium rounded-full text-sm inline-flex items-center;
+  }
+  
+  .badge-accent {
+    @apply px-2.5 py-1 bg-accent-100 text-accent-700 border border-accent-200 font-medium rounded-full text-sm inline-flex items-center;
+  }
+  
+  .badge-success {
+    @apply px-2.5 py-1 bg-success-light text-success-dark border border-success font-medium rounded-full text-sm inline-flex items-center;
+  }
+  
+  .badge-warning {
+    @apply px-2.5 py-1 bg-warning-light text-warning-dark border border-warning font-medium rounded-full text-sm inline-flex items-center;
+  }
+  
+  .badge-error {
+    @apply px-2.5 py-1 bg-error-light text-error-dark border border-error font-medium rounded-full text-sm inline-flex items-center;
+  }
+  
+  /* Text Utilities */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+  }
+  
+  .heading-primary {
+    @apply font-display font-bold text-secondary-900;
+  }
+  
+  .heading-gradient {
+    @apply font-display font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+  }
+  
+  /* Animation Utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+  
+  .animate-bounce-in {
+    animation: bounceIn 0.6s ease-out;
+  }
+  
+  /* Responsive Grid Utilities */
+  .grid-responsive {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
+  }
+  
+  .grid-responsive-2 {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+  }
+  
+  .grid-responsive-3 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+  }
+  
+  .grid-responsive-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
+  }
+  
+  /* Nigerian Flag Colors */
+  .nigeria-green {
+    @apply bg-nigeria-green text-white;
+  }
+  
+  .nigeria-white {
+    @apply bg-nigeria-white text-secondary-900;
+  }
+}
+
+@layer utilities {
+  /* Custom Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive Text Sizes */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+  
+  .text-responsive-base {
+    @apply text-base sm:text-lg;
+  }
+  
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl;
+  }
+  
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl;
+  }
+  
+  .text-responsive-2xl {
+    @apply text-2xl sm:text-3xl;
+  }
+  
+  .text-responsive-3xl {
+    @apply text-3xl sm:text-4xl;
+  }
+  
+  /* Responsive Padding */
+  .p-responsive {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+  
+  .px-responsive {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .py-responsive {
+    @apply py-4 sm:py-6 lg:py-8;
+  }
+  
+  /* Responsive Margins */
+  .m-responsive {
+    @apply m-4 sm:m-6 lg:m-8;
+  }
+  
+  .mx-responsive {
+    @apply mx-4 sm:mx-6 lg:mx-8;
+  }
+  
+  .my-responsive {
+    @apply my-4 sm:my-6 lg:my-8;
+  }
+  
+  /* Line Clamp Utilities */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  
+  /* Glass Morphism Effect */
+  .glass {
+    @apply bg-white bg-opacity-20 backdrop-blur-lg border border-white border-opacity-30;
+  }
+  
+  .glass-red {
+    @apply bg-primary-500 bg-opacity-20 backdrop-blur-lg border border-primary-300 border-opacity-30;
+  }
+  
+  /* Focus Visible Utilities */
+  .focus-visible-primary {
+    @apply focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 focus-visible:ring-opacity-75;
+  }
+  
+  .focus-visible-accent {
+    @apply focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent-200 focus-visible:ring-opacity-75;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .btn-primary {
+    @apply border-2 border-primary-800;
+  }
+  
+  .card-primary {
+    @apply border-2 border-secondary-400;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
